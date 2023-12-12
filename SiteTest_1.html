@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthony's AutoCAD</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Times New Roman', serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    #main-title {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('background-image.jpg') no-repeat center top;
+      background-size: cover;
+      color: #fff;
+      font-size: 2em;
+      padding: 50px;
+    }
+
+    #about-me {
+      padding: 50px;
+      text-align: center;
+      font-size: 1em;
+    }
+
+    #portfolio-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 50px 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .portfolio-item {
+      width: 600px;
+      margin: 20px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .portfolio-item .text-box {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .portfolio-item p {
+      margin: 0;
+    }
+
+    #gallery-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 50px 0;
+    }
+
+    .gallery-item {
+      width: 18%;
+      margin: 50px 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+    }
+
+    #contact-section {
+      background-color: #333;
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-title">
+    <h1>Anthony's AutoCAD</h1>
+    <div id="about-me">
+      <p>Welcome to my AutoCAD Portfolio! My name is Anthony and I am currently a student at SBCC. I'm originally from the mountains near Kings Canyon National Park, where my family owns a small farm. My major is in mechanical engineering because I love to create things. This portfolio will be displaying my recent work in my Engineering AutoCAD class at SBCC. Enjoy.</p>
+    </div>
+  </div>
+
+  <div id="portfolio-section">
+    <div class="portfolio-item">
+      <img src="image1.png" alt="Project 1">
+      <div class="text-box">
+        <p>Intricate Design</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="image2.png" alt="Project 2">
+      <div class="text-box">
+        <p>Hinge</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="image3.png" alt="Project 3">
+      <div class="text-box">
+        <p>Strange Hinge</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="image4.png" alt="Project 4">
+      <div class="text-box">
+        <p>Circular Saw</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="image5.png" alt="Project 5">
+      <div class="text-box">
+        <p>Geneva Cam</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="gallery-section">
+    <div class="gallery-item"><img src="image1.png" alt="Project 1"></div>
+    <div class="gallery-item"><img src="image2.png" alt="Project 2"></div>
+    <div class="gallery-item"><img src="image3.png" alt="Project 3"></div>
+    <div class="gallery-item"><img src="image4.png" alt="Project 4"></div>
+    <div class="gallery-item"><img src="image5.png" alt="Project 5"></div>
+  </div>
+
+  <div id="contact-section">
+    <h2>Contact Information</h2>
+    <p>Instagram: anthony.wainess</p>
+  </div>
+
+  <script>
+    document.addEventListener('scroll', function () {
+      let scrollPosition = window.scrollY;
+      let fadeStart = document.getElementById('portfolio-section').offsetTop - window.innerHeight;
+      let fadeEnd = document.getElementById('portfolio-section').offsetTop + document.getElementById('portfolio-section').offsetHeight;
+
+      // Portfolio section fade in logic
+      if (scrollPosition >= fadeStart && scrollPosition <= fadeEnd) {
+        document.getElementById('portfolio-section').style.opacity = 1;
+        document.querySelectorAll('.portfolio-item').forEach((item, index) => {
+          setTimeout(() => {
+            item.style.opacity = 1;
+          }, index * 200);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
